@@ -6,9 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   </head>
 
   <body>
     <%= yield %>
+    <%= javascript_pack_tag 'hello_vue' %>
+    <%= javascript_pack_tag 'calendar' %>
+
   </body>
 </html>
