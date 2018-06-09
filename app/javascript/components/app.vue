@@ -6,10 +6,10 @@
   </el-header>
   <el-main>
     <el-row type="flex" class="map-video-wrapper">
-      <el-col :span=12>
+      <el-col :span=16>
         <tl-map></tl-map>
       </el-col>
-      <el-col :span=12>
+      <el-col :span=8>
         <tl-video-chat></tl-video-chat>
       </el-col>
     </el-row>

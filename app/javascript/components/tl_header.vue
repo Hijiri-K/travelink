@@ -1,5 +1,3 @@
-
-
 <template>
 <div>
   <a class="header__logo">Travelink</a>
