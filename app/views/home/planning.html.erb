@@ -15,6 +15,7 @@
     <tl-schedule v-bind:percentage="percentage"></tl-schedule>
 
     <tl-itinerary v-bind:places="places"></tl-itinerary>
+    <tl-itinerary-edit v-bind:places="places" @childs-event="parentsMethod"></tl-itinerary-edit>
   </main>
 <!-- </section> -->
 
@@ -27,6 +28,15 @@
 
 .el-main{
   /* padding:0px !important; */
+}
+
+
+.el-checkbox__label{
+  display: none !important;
+}
+
+.el-checkbox-group{
+  font-size: initial !important;
 }
 
 body{

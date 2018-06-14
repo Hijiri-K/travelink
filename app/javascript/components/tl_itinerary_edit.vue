@@ -1,35 +1,39 @@
 <template>
 <div class="">
-  <div class="itinerary-all-wrapper">
-    <div class="itinerary-wrapper">
+  <div id="itinerary-all-wrapper">
+
+<el-checkbox-group   v-model="selectedPlaces">
+    <div class="itinerary-wrapper" v-for="place in places">
       <div class="itinerary-item-wrapper  inline-block">
         <el-card :body-style="{ padding: '0px' }" class="itinerary-item">
           <div class="check-box-wrapper inline-block">
-              <div class="tl-checkbox"><el-checkbox v-model="checked"></el-checkbox></div>
+              <div class="tl-checkbox"><el-checkbox v-bind:label="place" name=""></el-checkbox></div>
           </div><!--
            --><div class="itinerary-item__image inline-block">
                 <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
               </div><!--
            --><div class="itinerary-item__contents inline-block">
                 <section class="itinerary-item__contents__section">
-                  <h3>湯布院</h3>
+                  <h3>{{place.title}}</h3>
                   <div class="itinerary-item__contents__section__category">
-                    <p>種類：観光地　滞在時間：180 min</p>
+                    <p>種類：{{place.group}}　滞在時間：{{place.staying}} min</p>
                   </div>
                   <div class="itinerary-item__contents__section__stay">
                   </div>
                   <div class="itinerary-item__contents__section__discription">
-                    <p>豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。</p>
+                    <p>{{place.discription}}</p>
                   </div>
                   <div class="itinerary-item__contents__section__price">
-                    <p>￥0</p>
+                    <p>{{place.currency}}{{place.price}}</p>
                   </div>
                 </section>
               </div>
         </el-card>
       </div>
     </div>
-
+  </el-checkbox-group>
+    <button type="button" name="button"  @click='$emit("childs-event", selectedPlaces)'>add places</button>
+      <span>selectedPlaces: {{ selectedPlaces }}</span>
   </div>
 </div>
 </template>
@@ -103,13 +107,19 @@
   margin:0 30px 0 30px;
   line-height: 150px;
 }
+
 </style>
+
+
 <script>
   export default {
-    data() {
+    props:['places'],
+    data: function() {
       return {
-        checked: true
+          selectedPlaces: []
+        // checked: true
       };
     }
   };
+
 </script>
