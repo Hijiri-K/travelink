@@ -1,148 +1,80 @@
 <template>
-  <div class="itinerary-all-wrapper">
-
-    <div class="time-line-wrapper top inline-block">
-      <div class="time-line__line-wrapper top inline-block">
-        <div class="time-line__line bar-top">
-
-        </div>
-          <span class="time-line__line__bot bar-top__dot"></span>
-      </div>
-      <div class="time-line__time top inline-block">
-        <p>22:00</p>
-      </div>
-    </div>
-
-    <div class="itinerary-wrapper">
-      <div class="time-line-wrapper inline-block">
-        <div class="time-line__line-wrapper inline-block">
-          <div class="time-line__line">
-              <span class="time-line__line__bot"></span>
+  <div class="">
+    <div class="itinerary-all-wrapper">
+      <div class="time-line-wrapper top inline-block">
+        <div class="time-line__line-wrapper top inline-block">
+          <div class="time-line__line bar-top">
           </div>
-        </div>
-        <div class="time-line__time inline-block">
-          <p>22:00</p>
+            <span class="time-line__line__bot bar-top__dot"></span>
+        </div><!--
+     --><div class="time-line__time top inline-block">
+          <p>2:00</p>
         </div>
       </div>
-      <div class="itinerary-item-wrapper  inline-block">
-        <el-card :body-style="{ padding: '0px' }" class="itinerary-item">
-              <div class="itinerary-item__image inline-block">
-                <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
-              </div>
 
-              <div class="itinerary-item__contents inline-block">
-                <section class="itinerary-item__contents__section">
-                  <h3>湯布院</h3>
-                  <div class="itinerary-item__contents__section__discription">
-                    <p>豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。</p>
-                  </div>
-                </section>
-              </div>
-        </el-card>
-      </div>
-    </div>
-
-    <div class="itinerary-wrapper">
-      <div class="time-line-wrapper inline-block">
-        <div class="time-line__line-wrapper inline-block">
-          <div class="time-line__line">
-              <span class="time-line__line__bot"></span>
+      <div class="itinerary-wrapper" v-for="place in places">
+        <div class="time-line-wrapper inline-block">
+          <div class="time-line__line-wrapper inline-block">
+            <div class="time-line__line">
+                <span class="time-line__line__bot"></span>
+            </div>
+          </div><!--
+       --><div class="time-line__time inline-block">
+            <p>2:00</p>
           </div>
-        </div>
-        <div class="time-line__time inline-block">
-          <p>9:00</p>
+        </div><!--
+     --><div class="itinerary-item-wrapper  inline-block">
+          <el-card :body-style="{ padding: '0px' }" class="itinerary-item"><!--
+             --><div class="itinerary-item__image inline-block">
+                  <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
+                </div><!--
+             --><div class="itinerary-item__contents inline-block">
+                  <section class="itinerary-item__contents__section">
+                    <h3>{{place.title}}</h3>
+                    <div class="itinerary-item__contents__section__category">
+                      <p>種類：{{place.group}}　滞在時間：{{place.staying}} min</p>
+                    </div>
+                    <div class="itinerary-item__contents__section__stay">
+                    </div>
+                    <div class="itinerary-item__contents__section__discription">
+                      <p>{{place.discription}}</p>
+                    </div>
+                    <div class="itinerary-item__contents__section__price">
+                      <p>{{place.currency}}{{place.price}}</p>
+                    </div>
+                  </section>
+                </div>
+          </el-card>
         </div>
       </div>
-      <div class="itinerary-item-wrapper  inline-block">
-        <el-card :body-style="{ padding: '0px' }" class="itinerary-item">
-              <div class="itinerary-item__image inline-block">
-                <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
-              </div>
 
-              <div class="itinerary-item__contents inline-block">
-                <section class="itinerary-item__contents__section">
-                  <h3>湯布院</h3>
-                  <div class="itinerary-item__contents__section__discription">
-                    <p>豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。</p>
-                  </div>
-                </section>
-              </div>
-        </el-card>
-      </div>
-    </div>
-
-    <div class="itinerary-wrapper">
-      <div class="time-line-wrapper inline-block">
-        <div class="time-line__line-wrapper inline-block">
-          <div class="time-line__line">
-              <span class="time-line__line__bot"></span>
-          </div>
-        </div>
-        <div class="time-line__time inline-block">
-          <p>9:00</p>
-        </div>
-      </div>
-      <div class="itinerary-item-wrapper  inline-block">
-        <el-card :body-style="{ padding: '0px' }" class="itinerary-item">
-              <div class="itinerary-item__image inline-block">
-                <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
-              </div>
-
-              <div class="itinerary-item__contents inline-block">
-                <section class="itinerary-item__contents__section">
-                  <h3>湯布院</h3>
-                  <div class="itinerary-item__contents__section__discription">
-                    <p>豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。</p>
-                  </div>
-                </section>
-              </div>
-        </el-card>
-      </div>
-    </div>
-
-    <div class="itinerary-wrapper">
-      <div class="time-line-wrapper inline-block">
-        <div class="time-line__line-wrapper inline-block">
-          <div class="time-line__line">
-              <span class="time-line__line__bot"></span>
-          </div>
-        </div>
-        <div class="time-line__time inline-block">
-          <p>9:00</p>
-        </div>
-      </div>
-      <div class="itinerary-item-wrapper  inline-block">
-        <el-card :body-style="{ padding: '0px' }" class="itinerary-item">
-              <div class="itinerary-item__image inline-block">
-                <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
-              </div>
-
-              <div class="itinerary-item__contents inline-block">
-                <section class="itinerary-item__contents__section">
-                  <h3>湯布院</h3>
-                  <div class="itinerary-item__contents__section__discription">
-                    <p>豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。</p>
-                  </div>
-                </section>
-              </div>
-        </el-card>
-      </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  props: ['places'],
+  data() {
+    return {
+      // places: ''
+    };
+  },
+}
 
+</script>
 
 <style scoped>
 
 .itinerary-item-wrapper{
-  padding:0 10px 15px 0;
-  width:calc(100%-110px);
+  padding-bottom:15px;
+  width:calc(100%-70px);
 }
  .el-card{
    /* margin:10px; */
    padding:0;
    height:150px;
+  box-sizing: border-box;
  }
 
  .el-card__body{
@@ -157,6 +89,7 @@
  img{
    height:150px;
    width:150px;
+   vertical-align: text-bottom;
  }
 
  p{
@@ -164,6 +97,11 @@
    word-wrap: break-all;
  }
 
+ h3{
+   padding-top:15px;
+   padding-bottom: 5px;
+   margin: 0;
+ }
  .itinerary-item{
  }
 
@@ -193,7 +131,7 @@
 
  .time-line-wrapper{
    height:167px;
-   width:80px;
+   width:70px;
    position:relative;
  }
 
@@ -205,6 +143,7 @@
  .time-line__time p{
    position: absolute;
    bottom:-3px;
+   /* width:50px; */
  }
 
  .time-line__line__bot{
@@ -224,6 +163,10 @@
    width:20px;
  }
 
+ .time-line__time p{
+   /* font-size: 14px; */
+ }
+
  .top{
    height:20px;
  }
@@ -234,11 +177,17 @@
 
  .bar-top{
    height:10px;
+   /* width:100%; */
    position: absolute;
    bottom: -7px;
  }
 
  .bar-top__dot{
    bottom: 0px;
+ }
+
+ .itinerary-item__contents__section__category p, .itinerary-item__contents__section__stay p{
+   font-size: 12px;
+   color:#666666;
  }
 </style>

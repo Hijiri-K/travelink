@@ -1,3 +1,39 @@
-<tl-planning></tl-planning>
-<%= javascript_pack_tag 'planning' %>
-<%= stylesheet_pack_tag 'planning' %> 
+<!-- <section class="el-container"> -->
+  <header class="el-header">
+    <tl-header>
+    </tl-header>
+  </header>
+  <main class="el-main">
+    <div class="el-row el-row--flex map-video-wrapper">
+      <div class="el-col el-col-18">
+        <tl-map></tl-map>
+      </div>
+      <div class="elcol el-col-6">
+        <tl-video-chat></tl-video-chat>
+      </div>
+    </div>
+    <tl-schedule v-bind:percentage="percentage"></tl-schedule>
+
+    <tl-itinerary v-bind:places="places"></tl-itinerary>
+  </main>
+<!-- </section> -->
+
+
+<style>
+.el-header{
+  background-color: #63A375;
+  height:60px;
+}
+
+.el-main{
+  /* padding:0px !important; */
+}
+
+body{
+  margin:0;
+}
+
+</style>
+<script>
+
+</script>
