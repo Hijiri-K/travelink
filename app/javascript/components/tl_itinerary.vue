@@ -11,8 +11,8 @@
           <p>2:00</p>
         </div>
       </div>
-
-      <div class="itinerary-wrapper" v-for="place in places">
+<transition-group tag="div" name="itinerary-transition">
+      <div class="itinerary-wrapper itinerary-transition-item" v-for="place in places" v-bind:key="place.id">
         <div class="time-line-wrapper inline-block">
           <div class="time-line__line-wrapper inline-block">
             <div class="time-line__line">
@@ -47,7 +47,7 @@
           </el-card>
         </div>
       </div>
-
+</transition-group>
     </div>
   </div>
 </template>

@@ -28,12 +28,14 @@ import TlItineraryEdit from '../components/tl_itinerary_edit.vue'
 //  })
 
  var places = [
-                { title: '湯布院', group: '食べ歩き', staying:180, discription: '豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。', price: 60, currency:"$", location:"33.262623,131.357272"},
-                { title: 'うみたまご', group: '水族館', staying:60, discription: '海の生き物とふれあえるテーマパークです。', price: 30, currency:"$", location:"33.258607,131.535934"},
-                { title: '杉乃井ホテル', group: '温泉', staying:120, discription: '別府温泉郷・観海寺温泉の高台に位置する、３世代で楽しめる温泉リゾートホテルです。', price: 120, currency:"$", location:"33.283696,131.475077"}
+                { id:1,title: '湯布院', group: '食べ歩き', staying:180, discription: '豊後富士と呼ばれる美しい由布岳の山麓に広がり、全国2位の湯量を誇る人気温泉地。', price: 60, currency:"$", location:"33.262623,131.357272"},
+                { id:2, title: 'うみたまご', group: '水族館', staying:60, discription: '海の生き物とふれあえるテーマパークです。', price: 30, currency:"$", location:"33.258607,131.535934"},
+                { id:3,title: '杉乃井ホテル', group: '温泉', staying:120, discription: '別府温泉郷・観海寺温泉の高台に位置する、３世代で楽しめる温泉リゾートホテルです。', price: 120, currency:"$", location:"33.283696,131.475077"}
              ]
 
  var planningPlaces = []
+
+ // var percentage = 0;
 
  new Vue({
      el: 'tl-header',
@@ -47,7 +49,7 @@ import TlItineraryEdit from '../components/tl_itinerary_edit.vue'
       el: 'tl-schedule',
       components: { TlSchedule },
       data:{
-        percentage:90
+        percentage: 0
       }
    })
 
@@ -88,6 +90,15 @@ import TlItineraryEdit from '../components/tl_itinerary_edit.vue'
              planningPlaces.length = 0
              planningPlaces.push(...selectedPlaces)
 
+             tl_schedule.percentage=0;
+             var totalTime = 0;
+             for(var place of planningPlaces){
+              var staying = place['staying']
+               totalTime += staying
+               tl_schedule.percentage = totalTime/480*100
+               // console.log(totalTime)
+             }
+              console.log(tl_schedule.percentage)
            }
          }
       })

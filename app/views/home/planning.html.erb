@@ -8,14 +8,20 @@
       <div class="el-col el-col-18">
         <tl-map></tl-map>
       </div>
-      <div class="elcol el-col-6">
+      <div class="el-col el-col-6">
         <tl-video-chat></tl-video-chat>
       </div>
     </div>
     <tl-schedule v-bind:percentage="percentage"></tl-schedule>
+    <!-- <div class="el-row el-row--flex"> -->
+      <!-- <div class="el-col el-col-12"> -->
+      <tl-itinerary-edit v-bind:places="places" @childs-event="parentsMethod"></tl-itinerary-edit>
+      <!-- </div> -->
+      <!-- <div class="el-col el-col-12"> -->
+      <tl-itinerary v-bind:places="places"></tl-itinerary>
+      <!-- </div> -->
 
-    <tl-itinerary v-bind:places="places"></tl-itinerary>
-    <tl-itinerary-edit v-bind:places="places" @childs-event="parentsMethod"></tl-itinerary-edit>
+    </div>
   </main>
 <!-- </section> -->
 
@@ -37,6 +43,23 @@
 
 .el-checkbox-group{
   font-size: initial !important;
+}
+
+.el-progress-bar__inner{
+  transition: width 1s ease-out;
+}
+
+.itinerary-transition-item {
+  transition: all 1.5s;
+  /* display: inline-block; */
+  /* margin-right: 10px; */
+}
+.itinerary-transition-enter, .itinerary-transition-leave-to{
+  opacity: 0;
+  transform: translateY(30px);
+}
+.itinerary-transition-leave-active {
+  position: absolute;
 }
 
 body{
