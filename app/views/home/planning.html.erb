@@ -1,0 +1,72 @@
+<!-- <section class="el-container"> -->
+  <header class="el-header">
+    <tl-header>
+    </tl-header>
+  </header>
+  <main class="el-main">
+    <div class="el-row el-row--flex map-video-wrapper">
+      <div class="el-col el-col-18">
+        <tl-map></tl-map>
+      </div>
+      <div class="el-col el-col-6">
+        <tl-video-chat></tl-video-chat>
+      </div>
+    </div>
+    <tl-schedule v-bind:percentage="percentage"></tl-schedule>
+    <!-- <div class="el-row el-row--flex"> -->
+      <!-- <div class="el-col el-col-12"> -->
+      <tl-itinerary-edit v-bind:places="places" @childs-event="parentsMethod"></tl-itinerary-edit>
+      <!-- </div> -->
+      <!-- <div class="el-col el-col-12"> -->
+      <tl-itinerary v-bind:places="places"></tl-itinerary>
+      <!-- </div> -->
+
+    </div>
+  </main>
+<!-- </section> -->
+
+
+<style>
+.el-header{
+  background-color: #63A375;
+  height:60px;
+}
+
+.el-main{
+  /* padding:0px !important; */
+}
+
+
+.el-checkbox__label{
+  display: none !important;
+}
+
+.el-checkbox-group{
+  font-size: initial !important;
+}
+
+.el-progress-bar__inner{
+  transition: width 1s ease-out;
+}
+
+.itinerary-transition-item {
+  transition: all 1.5s;
+  /* display: inline-block; */
+  /* margin-right: 10px; */
+}
+.itinerary-transition-enter, .itinerary-transition-leave-to{
+  opacity: 0;
+  transform: translateY(30px);
+}
+.itinerary-transition-leave-active {
+  position: absolute;
+}
+
+body{
+  margin:0;
+}
+
+</style>
+<script>
+
+</script>
