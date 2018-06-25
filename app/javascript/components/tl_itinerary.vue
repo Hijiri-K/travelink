@@ -1,60 +1,60 @@
 <template>
-  <div class="">
-    <div class="itinerary-all-wrapper">
-      <div class="time-line-wrapper top inline-block">
-        <div class="time-line__line-wrapper top inline-block">
-          <div class="time-line__line bar-top">
-          </div>
-            <span class="time-line__line__bot bar-top__dot"></span>
-        </div><!--
-     --><div class="time-line__time top inline-block">
-          <p>2:00</p>
+  <div class="itinerary-wrapper-wrapper">
+    <div class="time-line-wrapper top inline-block">
+      <div class="time-line__line-wrapper top inline-block">
+        <div class="time-line__line bar-top">
         </div>
+          <span class="time-line__line__bot bar-top__dot"></span>
+      </div><!--
+   --><div class="time-line__time top inline-block">
+        <p>2:00</p>
       </div>
-<transition-group tag="div" name="itinerary-transition">
-      <div class="itinerary-wrapper itinerary-transition-item" v-for="place in places" v-bind:key="place.id">
-        <div class="time-line-wrapper inline-block">
-          <div class="time-line__line-wrapper inline-block">
-            <div class="time-line__line">
-                <span class="time-line__line__bot"></span>
+    </div>
+
+      <transition-group tag="div" name="itinerary-transition">
+        <div class="itinerary-wrapper itinerary-transition-item" v-for="place in planningPlaces" v-bind:key="place.id">
+          <div class="time-line-wrapper inline-block">
+            <div class="time-line__line-wrapper inline-block">
+              <div class="time-line__line">
+                  <span class="time-line__line__bot"></span>
+              </div>
+            </div><!--
+         --><div class="time-line__time inline-block">
+              <p>22:00</p>
             </div>
           </div><!--
-       --><div class="time-line__time inline-block">
-            <p>2:00</p>
+       --><div class="itinerary-item-wrapper  inline-block">
+            <el-card :body-style="{ padding: '0px' }" class="itinerary-item"><!--
+               --><div class="itinerary-item__image inline-block">
+                    <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
+                  </div><!--
+               --><div class="itinerary-item__contents inline-block">
+                    <section class="itinerary-item__contents__section">
+                      <h3>{{place.title}}</h3>
+                      <div class="itinerary-item__contents__section__category">
+                        <p>種類：{{place.group}}　滞在時間：{{place.staying}} min</p>
+                      </div>
+                      <div class="itinerary-item__contents__section__stay">
+                      </div>
+                      <div class="itinerary-item__contents__section__discription">
+                        <p>{{place.discription}}</p>
+                      </div>
+                      <div class="itinerary-item__contents__section__price">
+                        <p>{{place.currency}}{{place.price}}</p>
+                      </div>
+                    </section>
+                  </div>
+            </el-card>
           </div>
-        </div><!--
-     --><div class="itinerary-item-wrapper  inline-block">
-          <el-card :body-style="{ padding: '0px' }" class="itinerary-item"><!--
-             --><div class="itinerary-item__image inline-block">
-                  <img src="https://cdn.4travel.jp/img/tcs/t/album/src/10/40/47/src_10404771.jpg?1259494610">
-                </div><!--
-             --><div class="itinerary-item__contents inline-block">
-                  <section class="itinerary-item__contents__section">
-                    <h3>{{place.title}}</h3>
-                    <div class="itinerary-item__contents__section__category">
-                      <p>種類：{{place.group}}　滞在時間：{{place.staying}} min</p>
-                    </div>
-                    <div class="itinerary-item__contents__section__stay">
-                    </div>
-                    <div class="itinerary-item__contents__section__discription">
-                      <p>{{place.discription}}</p>
-                    </div>
-                    <div class="itinerary-item__contents__section__price">
-                      <p>{{place.currency}}{{place.price}}</p>
-                    </div>
-                  </section>
-                </div>
-          </el-card>
         </div>
-      </div>
-</transition-group>
-    </div>
+      </transition-group>
+
   </div>
 </template>
 
 <script>
 export default {
-  props: ['places'],
+  props: ['planningPlaces'],
   data() {
     return {
       // places: ''
@@ -66,14 +66,15 @@ export default {
 
 <style scoped>
 
+
 .itinerary-item-wrapper{
-  padding-bottom:15px;
-  width:calc(100%-70px);
+  padding-bottom:8px;
+  width:calc(100%-50px);
 }
  .el-card{
    /* margin:10px; */
    padding:0;
-   height:150px;
+   height:100px;
   box-sizing: border-box;
  }
 
@@ -83,12 +84,12 @@ export default {
  }
  .itinerary-item__image{
    /* display: inline-block; */
-   height:150px;
-   width:150px;
+   height:100px;
+   width:100px;
  }
  img{
-   height:150px;
-   width:150px;
+   height:100px;
+   width:100px;
    vertical-align: text-bottom;
  }
 
@@ -107,8 +108,8 @@ export default {
 
  .itinerary-item__contents{
    vertical-align:top;
-   height:150px;
-   width:calc(100%-160px);
+   height:100px;
+   width:calc(100%-100px);
  }
 
  .itinerary-item__contents__section{
@@ -122,22 +123,27 @@ export default {
 
  .time-line__line{
    /* border: solid 2px #8895B3; */
-   height:167px;
+   height:110px;
    width:4px;
    background-color: #8895B3;
-   margin-right: 8px;
-   margin-left: 8px;
+   margin-right: 3px;
+   margin-left: 3px;
  }
 
  .time-line-wrapper{
-   height:167px;
-   width:70px;
+   height:110px;
+   width:50px;
    position:relative;
  }
 
  .time-line__time{
-   height:167px;
-   width:50px;
+   height:110px;
+   width:40px;
+ }
+
+ .time-line__time p{
+   font-size:12px;
+   padding: 0 0 4px 2px;
  }
 
  .time-line__time p{
@@ -154,13 +160,13 @@ export default {
    position: absolute;
    bottom:7px;
    left:0px;
-   margin-right: 6px;
-   margin-left: 6px;
+   margin-right: 1px;
+   margin-left: 1px;
  }
 
  .time-line__line-wrapper{
-   height:167px;
-   width:20px;
+   height:110px;
+   width:10px;
  }
 
  .time-line__time p{
@@ -190,4 +196,5 @@ export default {
    font-size: 12px;
    color:#666666;
  }
+
 </style>

@@ -7,6 +7,6 @@
 <style scoped>
   .map-container{
     background-color: #FCDDBC;
-    height:300px;
+    height:150px;
   }
 </style>

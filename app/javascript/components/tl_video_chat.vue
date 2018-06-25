@@ -7,6 +7,6 @@
 <style scoped>
   .video-chat-container{
     background-color: #C6C8EE;
-    height:300px;
+    height:150px;
   }
 </style>

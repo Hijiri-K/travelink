@@ -11,14 +11,20 @@
 <style scoped>
 .header__menu{
   display: inline-block;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 .header__logo{
   display: inline-block;
   color:red;
-  font-size: 24px;
+  /* font-size: 24px; */
 }
+
+ul{
+  margin-bottom:0;
+  margin-top: 0;
+}
+
 
 
 </style>
