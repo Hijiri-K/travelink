@@ -120,8 +120,8 @@ body{
 .switch-button{
   width:50%;
   height:50px;
-  background-color: #f2f2f2;
-  border: solid 0.5px #7f7f7f;
+  background-color: #f9f9f9;
+  border: solid 0.5px #dcdfe6;
   box-sizing: border-box;
   margin: 0;
   display: inline-block;

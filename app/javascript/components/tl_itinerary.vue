@@ -93,16 +93,23 @@ export default {
    vertical-align: text-bottom;
  }
 
+ h3{
+   padding-top:5px;
+   margin: 0;
+   font-size: 16px;
+ }
+
  p{
    margin:0;
    word-wrap: break-all;
+   font-size: 12px
  }
 
- h3{
-   padding-top:15px;
-   padding-bottom: 5px;
-   margin: 0;
+ .itinerary-item__contents__section__category p, .itinerary-item__contents__section__stay p{
+   font-size: 10px;
+   color:#666666;
  }
+
  .itinerary-item{
  }
 
@@ -192,9 +199,6 @@ export default {
    bottom: 0px;
  }
 
- .itinerary-item__contents__section__category p, .itinerary-item__contents__section__stay p{
-   font-size: 12px;
-   color:#666666;
- }
+
 
 </style>
